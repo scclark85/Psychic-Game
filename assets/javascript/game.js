@@ -25,8 +25,6 @@ document.onkeyup = function (event) {
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     console.log(computerGuess);
 
-    guessText.innerHTML = userGuess;
-
 
     //user guess beats computer 
     if (userGuess === computerGuess) {
@@ -47,6 +45,17 @@ document.onkeyup = function (event) {
         losses++;
         guesschoices = [];
     }
+
+    //Display User Choice and Computer Choice
+    userChoiceText.textContent = "Your Guess: " + userGuess;
+    computerChoiceText.textContent = "Computer Guess: " + computerGuess;
+    
+    //Display Wins and Losses
+    lossesText.textContent = "Losses: " + losses;
+    winsText.textContent = "Wins: " + wins;
+
+    //Display guesses remaining
+    guesseslText.textContent = "Guesses Left: " + guessesLeft;
 
 }
 // Function that updates the score...
